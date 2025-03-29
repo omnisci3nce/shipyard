@@ -1,6 +1,6 @@
 (library
  (name ui)
- (libraries git dream))
+ (libraries gitt dream))
 
 (rule
  (targets layout.ml)

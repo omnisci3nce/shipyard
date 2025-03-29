@@ -5,7 +5,7 @@ links based on what page you're on. *)
 
 type sidebar = [
   | `Home
-  | `Repo of Git.Lib.repo
+  | `Repo of Gitt.Lib.repo
   | `Settings
 ]
 

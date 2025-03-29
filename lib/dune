@@ -1,6 +1,6 @@
 (library
  (name shipyard)
- (libraries git ui dream)
+ (libraries gitt ui dream)
  (preprocess
   (pps lwt_ppx)))
 

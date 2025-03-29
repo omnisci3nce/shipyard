@@ -1,5 +1,5 @@
 open Ui
-open Git.Lib
+open Gitt.Lib
 
 let run () =
   let _config = Config.default () in
@@ -15,9 +15,8 @@ let run () =
       |> Dream.html);
     Dream.get "/" 
       (fun _req ->
-        let repos = Git.Lib.all_repos () in
+        let%lwt repos = Gitt.Lib.all_repos () in
         Index.render repos 
         |> Layout.render ~title:"Shipyard" ~sidebar:`Home
         |> Dream.html);
-
   ]
