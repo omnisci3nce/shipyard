@@ -9,6 +9,11 @@
   (run dream_eml %{deps} --workspace %{workspace_root})))
 
 (rule
+(targets icons.ml)
+(deps icons.eml.ml)
+(action (run dream_eml %{deps} --workspace %{workspace_root})))
+
+(rule
  (targets index.ml)
  (deps index.eml.html)
  (action

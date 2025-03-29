@@ -2,12 +2,18 @@ module Sidebar = struct
   open Ctx_sidebar
 
   let render_item (item: nav_item) =
-    <li><a href="<%s item.href %>"><%s item.text %></a></li>
+    let icon = item.icon
+      |> Option.map (Icons.Octicons.as_svg)
+      |> Option.value ~default:"" in
+    <li class="sidebar-list-item"><a href="<%s item.href %>">
+      <%s! icon %>
+      <%s item.text %>
+    </a></li>
 
   let render sidebar =
     let items = nav_items sidebar
       |> List.map render_item |> String.concat "" in
-    <ul>
+    <ul class="sidebar-list">
       <%s! items %>
     </ul>
 end
@@ -26,7 +32,7 @@ let render ~title ~sidebar inner =
       <h3><a href="/">Shipyard</a></h3>
 
       <div class="header-right">
-        <a href="#">Github</a>
+        <a href="https://github.com/omnisci3nce/shipyard">Github</a>
         <button>Dark mode</button>
       </div>
     </header>
