@@ -1,4 +1,5 @@
 let run () =
+  let _config = Config.default () in
   Dream.run
   @@ Dream.logger
   @@ Dream.router [
