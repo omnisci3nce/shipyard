@@ -4,7 +4,13 @@ git web ui built with ocaml
 
 ## wishlist
 
+- [ ] neutral colour palette
 - [ ] themeable
+- [ ] Basic Auth middleware
+- Git:
+    - [ ] scan directory for repos
+    - [ ] get all branches
+    - [ ] get all commits in branch
 
 ## design
 
