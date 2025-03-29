@@ -1,0 +1,15 @@
+open Git.Lib
+
+(* List all repositories in the scan directory. *)
+
+let render_item repo =
+  let link = "/r/" ^ repo.name in
+  <li class="repo-card"><a href="<%s link %>">
+    <%s repo.name %>
+  </a></li>
+
+let render (repos: repo list) =
+  let repos = List.map render_item repos |> String.concat "" in
+  <ul class="repo-list">
+    <%s! repos %>
+  </ul>

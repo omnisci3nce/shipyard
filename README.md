@@ -8,8 +8,21 @@ git web ui built with ocaml
 
 ## design
 
-https://dribbble.com/shots/21235670-Web-application-design-for-database-app
-
-?
-
 melange?
+
+```
+
+Three column design. Sidebar is omnipresent and contextual based on page. Right is a details panel. Center is repo info or repo list on the home page.
+
+| -------- | --------------------- | --------- |
+|          |                       |           |
+|          |                       |           |
+|          |                       |           |
+|          |                       |           |
+|          |                       |           |
+|          |                       |           |
+|          |                       |           |
+|          |                       |           |
+|          |                       |           |
+| -------- | --------------------- | --------- |
+```

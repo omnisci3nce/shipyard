@@ -1,0 +1,20 @@
+(library
+ (name ui)
+ (libraries git dream))
+
+(rule
+ (targets layout.ml)
+ (deps layout.eml.html)
+ (action
+  (run dream_eml %{deps} --workspace %{workspace_root})))
+
+(rule
+ (targets index.ml)
+ (deps index.eml.html)
+ (action
+  (run dream_eml %{deps} --workspace %{workspace_root})))
+
+(rule
+(targets repo.ml)
+(deps repo.eml.html)
+(action (run dream_eml %{deps} --workspace %{workspace_root})))

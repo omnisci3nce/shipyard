@@ -1,0 +1,33 @@
+
+:root {
+
+}
+
+h1 {
+    font-size: 24px;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+}
+main {
+    padding-left: 48px;
+}
+
+.root-container {
+    display: flex;
+    max-width: 1400px;
+}
+
+#sidebar-root {
+    display: flex;
+    flex-direction: column;
+}
+
+.repo-list {
+    list-style-type: none;
+}
+
+.repo-card {
+    padding: 12px;
+}

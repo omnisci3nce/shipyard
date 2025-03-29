@@ -1,0 +1,43 @@
+module Sidebar = struct
+  open Ctx_sidebar
+
+  let render_item (item: nav_item) =
+    <li><a href="<%s item.href %>"><%s item.text %></a></li>
+
+  let render sidebar =
+    let items = nav_items sidebar
+      |> List.map render_item |> String.concat "" in
+    <ul>
+      <%s! items %>
+    </ul>
+end
+
+let render ~title ~sidebar inner =
+  let sbar = Sidebar.render sidebar in
+  <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title><%s title %></title>
+    <link href="/static/design.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <h3><a href="/">Shipyard</a></h3>
+
+      <div class="header-right">
+        <a href="#">Github</a>
+        <button>Dark mode</button>
+      </div>
+    </header>
+
+    <div class="root-container">
+      <nav id="sidebar-root">
+        <%s! sbar %>
+      </nav>
+      <main>
+        <%s! inner %>
+      </main>
+    </div>
+  </body>
+  </html>
