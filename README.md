@@ -12,7 +12,9 @@ melange?
 
 ```
 
-Three column design. Sidebar is omnipresent and contextual based on page. Right is a details panel. Center is repo info or repo list on the home page.
+Three column design. Sidebar is omnipresent and contextual based on page.
+Right will be a details panel.
+Center is repo info or repo list on the home page.
 
 | -------- | --------------------- | --------- |
 |          |                       |           |
